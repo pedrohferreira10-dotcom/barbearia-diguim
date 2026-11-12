@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,9 +8,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <div class="container">
-            <h1><a href="index.html" class="logo-link">Barbearia do Diguim</a></h1>
+            <div class="brand-area">
+                <img src="logo-diguim-cortada.png"
+                     alt="Logo da Barbearia do Diguim"
+                     class="logo-topo">
+
+                <h1>
+                    <a href="index.html" class="logo-link">
+                        Barbearia do Diguim
+                    </a>
+                </h1>
+            </div>
+
             <div class="header-actions">
                 <a href="login.html" class="btn-header">Fazer Login</a>
             </div>
@@ -17,86 +30,184 @@
     </header>
 
     <main class="container profile-layout">
-        <aside class="profile-sidebar">
-            <a href="index.html" class="back-link-left">&larr; Voltar para Barbeiros</a>
 
-            <article class="card">
-                <img src="robinho jr diguim.jpg" alt="Foto de Robinho Jr">
+        <aside class="profile-sidebar">
+
+            <a href="index.html" class="back-link-left">
+                &larr; Voltar para Barbeiros
+            </a>
+
+            <div class="card">
+                <img src="robinho jr diguim.jpg" alt="Robinho Jr">
                 <h2>Robinho Jr</h2>
                 <p>Especialista em Corte com Cabelo Liso</p>
-            </article>
+            </div>
 
-            <section class="servicos-box">
+            <div class="servicos-box">
                 <h3>Preços, serviços e duração</h3>
+
                 <table>
                     <thead>
-                        <tr><td>Serviço</td><td>Preço</td><td>Duração</td></tr>
+                        <tr>
+                            <td>Serviço</td>
+                            <td>Preço</td>
+                            <td>Duração</td>
+                        </tr>
                     </thead>
+
                     <tbody>
-                    <tr><td>Corte</td><td>R$ 35,00</td><td>30 min</td></tr>
-                    <tr><td>Barba</td><td>R$ 15,00</td><td>30 min</td></tr>
-                    <tr><td>Química</td><td>R$ 115,00</td><td>2 horas</td></tr>
-                    <tr><td>Luzes e Nevou</td><td>R$ 30,00</td><td>30 min*</td></tr>
-                    <tr><td>Hidratação</td><td>R$ 25,00</td><td>30 min</td></tr>
+                        <tr>
+                            <td>Corte</td>
+                            <td>R$ 35,00</td>
+                            <td>30 min</td>
+                        </tr>
+
+                        <tr>
+                            <td>Barba</td>
+                            <td>R$ 15,00</td>
+                            <td>30 min</td>
+                        </tr>
+
+                        <tr>
+                            <td>Química</td>
+                            <td>R$ 115,00</td>
+                            <td>2 horas</td>
+                        </tr>
+
+                        <tr>
+                            <td>Hidratação</td>
+                            <td>R$ 25,00</td>
+                            <td>30 min</td>
+                        </tr>
                     </tbody>
                 </table>
-                <p class="form-hint">* A duração de Luzes e Nevou foi considerada como 30 minutos provisoriamente. Confirme esse tempo com a barbearia.</p>
-            </section>
+            </div>
+
         </aside>
 
         <section class="profile-content" id="agendamento">
+
             <h2>Agendar com Robinho Jr</h2>
-            <p class="subtitle-agendamento">Escolha um serviço ou uma combinação de dois serviços. O preço e a duração já aparecem somados nas opções.</p>
+
+            <p class="subtitle-agendamento">
+                Escolha um serviço ou uma combinação de dois serviços.
+                O preço e a duração já aparecem somados nas opções.
+            </p>
 
             <div class="horarios-info">
-                <strong>Horário de atendimento:</strong> segunda a sábado, das 09:00 às 18:00. A última opção de início é 15:30 para garantir que até a combinação mais longa termine antes das 18:00.
+                <strong>Horário de atendimento:</strong>
+                segunda a sábado, das 09:00 às 18:00.
+
+                A última opção de início é 15:30 para garantir que os
+                serviços terminem antes das 18:00.
             </div>
 
             <form action="sucesso.html" method="get">
+
                 <input type="hidden" name="barbeiro" value="Robinho Jr">
 
                 <div class="form-group">
-                    <label for="email">E-mail do Cliente:</label>
-                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+                    <label for="nome">Nome do Cliente:</label>
+
+                    <input type="text"
+                           id="nome"
+                           name="nome"
+                           required
+                           placeholder="Digite seu nome completo">
                 </div>
 
                 <div class="form-group">
-                    <label for="pacote">Escolha o serviço (ou dois serviços):</label>
+
+                    <label for="pacote">
+                        Escolha o serviço ou dois serviços:
+                    </label>
+
                     <select id="pacote" name="servico" required>
+
                         <option value="">Selecione uma opção...</option>
+
                         <optgroup label="Um serviço">
-                        <option value="Corte — R$ 35,00 — 30 min">Corte — R$ 35,00 — 30 min</option>
-                        <option value="Barba — R$ 15,00 — 30 min">Barba — R$ 15,00 — 30 min</option>
-                        <option value="Química — R$ 115,00 — 2 horas">Química — R$ 115,00 — 2 horas</option>
-                        <option value="Luzes e Nevou — R$ 30,00 — 30 min*">Luzes e Nevou — R$ 30,00 — 30 min*</option>
-                        <option value="Hidratação — R$ 25,00 — 30 min">Hidratação — R$ 25,00 — 30 min</option>
+
+                            <option value="Corte - R$ 35,00 - 30 min">
+                                Corte - R$ 35,00 - 30 min
+                            </option>
+
+                            <option value="Barba - R$ 15,00 - 30 min">
+                                Barba - R$ 15,00 - 30 min
+                            </option>
+
+                            <option value="Química - R$ 115,00 - 2 horas">
+                                Química - R$ 115,00 - 2 horas
+                            </option>
+
+                            <option value="Hidratação - R$ 25,00 - 30 min">
+                                Hidratação - R$ 25,00 - 30 min
+                            </option>
+
                         </optgroup>
-                        <optgroup label="Dois serviços — valores e tempos somados">
-                        <option value="Corte + Barba — R$ 50,00 — 1 hora">Corte + Barba — R$ 50,00 — 1 hora</option>
-                        <option value="Corte + Química — R$ 150,00 — 2 horas e 30 minutos">Corte + Química — R$ 150,00 — 2 horas e 30 minutos</option>
-                        <option value="Corte + Luzes e Nevou — R$ 65,00 — 1 hora">Corte + Luzes e Nevou — R$ 65,00 — 1 hora</option>
-                        <option value="Corte + Hidratação — R$ 60,00 — 1 hora">Corte + Hidratação — R$ 60,00 — 1 hora</option>
-                        <option value="Barba + Química — R$ 130,00 — 2 horas e 30 minutos">Barba + Química — R$ 130,00 — 2 horas e 30 minutos</option>
-                        <option value="Barba + Luzes e Nevou — R$ 45,00 — 1 hora">Barba + Luzes e Nevou — R$ 45,00 — 1 hora</option>
-                        <option value="Barba + Hidratação — R$ 40,00 — 1 hora">Barba + Hidratação — R$ 40,00 — 1 hora</option>
-                        <option value="Química + Luzes e Nevou — R$ 145,00 — 2 horas e 30 minutos">Química + Luzes e Nevou — R$ 145,00 — 2 horas e 30 minutos</option>
-                        <option value="Química + Hidratação — R$ 140,00 — 2 horas e 30 minutos">Química + Hidratação — R$ 140,00 — 2 horas e 30 minutos</option>
-                        <option value="Luzes e Nevou + Hidratação — R$ 55,00 — 1 hora">Luzes e Nevou + Hidratação — R$ 55,00 — 1 hora</option>
+
+                        <optgroup label="Dois serviços - valores e tempos somados">
+
+                            <option value="Corte + Barba - R$ 50,00 - 1 hora">
+                                Corte + Barba - R$ 50,00 - 1 hora
+                            </option>
+
+                            <option value="Corte + Química - R$ 150,00 - 2 horas e 30 minutos">
+                                Corte + Química - R$ 150,00 - 2 horas e 30 minutos
+                            </option>
+
+                            <option value="Corte + Hidratação - R$ 60,00 - 1 hora">
+                                Corte + Hidratação - R$ 60,00 - 1 hora
+                            </option>
+
+                            <option value="Barba + Química - R$ 130,00 - 2 horas e 30 minutos">
+                                Barba + Química - R$ 130,00 - 2 horas e 30 minutos
+                            </option>
+
+                            <option value="Barba + Hidratação - R$ 40,00 - 1 hora">
+                                Barba + Hidratação - R$ 40,00 - 1 hora
+                            </option>
+
+                            <option value="Química + Hidratação - R$ 140,00 - 2 horas e 30 minutos">
+                                Química + Hidratação - R$ 140,00 - 2 horas e 30 minutos
+                            </option>
+
                         </optgroup>
+
                     </select>
-                    <span class="form-hint">Para fazer dois serviços no mesmo dia, escolha a combinação correspondente na segunda parte da lista.</span>
+
+                    <span class="form-hint">
+                        Para fazer dois serviços no mesmo dia, escolha
+                        uma combinação na segunda parte da lista.
+                    </span>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="data">Data do agendamento:</label>
-                    <input type="date" id="data" name="data" required>
-                    <span class="form-hint">Atendimento de segunda a sábado. O HTML não consegue bloquear automaticamente os domingos.</span>
+
+                    <input type="date"
+                           id="data"
+                           name="data"
+                           min="2026-11-12"
+                           required>
+
+                    <span class="form-hint">
+                        Não é possível selecionar datas anteriores a 12/11/2026.
+                        Atendimento de segunda a sábado.
+                    </span>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="hora">Horário de início:</label>
+
                     <select id="hora" name="hora" required>
+
                         <option value="">Selecione o horário...</option>
+
                         <option value="09:00">09:00</option>
                         <option value="09:30">09:30</option>
                         <option value="10:00">10:00</option>
@@ -111,14 +222,28 @@
                         <option value="14:30">14:30</option>
                         <option value="15:00">15:00</option>
                         <option value="15:30">15:30</option>
+
                     </select>
-                    <span class="form-hint">Os horários são apresentados em intervalos de 30 minutos.</span>
+
+                    <span class="form-hint">
+                        Horários em intervalos de 30 minutos.
+                    </span>
+
                 </div>
 
-                <button type="submit" class="btn-primary btn-full">Solicitar Agendamento</button>
+                <button type="submit" class="btn-primary btn-full">
+                    Solicitar Agendamento
+                </button>
+
             </form>
-            <p class="aviso-html">Atenção: esta versão é feita somente com HTML e CSS. Ela não verifica conflitos de horários nem salva o agendamento em um banco de dados.</p>
+
         </section>
+
     </main>
+
+    <img src="logo-diguim-cortada.png"
+         alt=""
+         class="logo-canto">
+
 </body>
 </html>
