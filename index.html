@@ -12,9 +12,7 @@
             <h1>Barbearia do Diguim</h1>
             <div class="contact">WhatsApp: (17) 99763-8155</div>
             <div class="header-actions">
-                <span id="user-badge" style="display: none;"></span>
-                <a href="login.html" id="login-link" class="btn-header">Fazer Login</a>
-                <button id="logout-btn" class="btn-header btn-outline" style="display: none;">Sair</button>
+                <a href="login.html" class="btn-header">Fazer Login</a>
             </div>
         </div>
     </header>
@@ -22,65 +20,39 @@
     <section id="hero">
         <div class="container">
             <h2>O melhor corte da região</h2>
-            <p>Escolha o seu profissional abaixo e agende o seu horário.</p>
+            <p>Escolha seu profissional e acesse a página dele para consultar os serviços e solicitar um agendamento.</p>
         </div>
     </section>
 
-    <section id="profissionais" class="container">
+    <main id="profissionais" class="container">
         <h2>Nossos Barbeiros</h2>
         <div class="cards">
-            <div class="card">
-                <img src="image_285e7e.jpg" alt="Yuri Alberto"> <!--[cite: 1] -->
+            <article class="card">
+                <img src="yuri alberto diguim.jpg" alt="Foto de Yuri Alberto">
                 <h3>Yuri Alberto</h3>
                 <p>Especialista em Química</p>
-                <a href="barbeiro.html?id=yuri" class="btn-primary btn-full" style="margin-top: 15px;">Ver Perfil e Agendar</a>
-            </div>
-            <div class="card">
-                <img src="robinho jr diguim.jpg" alt="Robinho Jr"> <!--[cite: 2] -->
+                <a href="yuri-alberto.html" class="btn-primary btn-full">Ver Perfil e Agendar</a>
+            </article>
+
+            <article class="card">
+                <img src="robinho jr diguim.jpg" alt="Foto de Robinho Jr">
                 <h3>Robinho Jr</h3>
                 <p>Especialista em Corte com Cabelo Liso</p>
-                <a href="barbeiro.html?id=robinho" class="btn-primary btn-full" style="margin-top: 15px;">Ver Perfil e Agendar</a>
-            </div>
-            <div class="card">
-                <img src="image_285abf.jpg" alt="Robson Bambu"> <!--[cite: 3] -->
+                <a href="robinho-jr.html" class="btn-primary btn-full">Ver Perfil e Agendar</a>
+            </article>
+
+            <article class="card">
+                <img src="robson bambu diguim.jpg" alt="Foto de Robson Bambu">
                 <h3>Robson Bambu</h3>
                 <p>Especialista em Corte com Cabelo Enrolado</p>
-                <a href="barbeiro.html?id=robson" class="btn-primary btn-full" style="margin-top: 15px;">Ver Perfil e Agendar</a>
-            </div>
+                <a href="robson-bambu.html" class="btn-primary btn-full">Ver Perfil e Agendar</a>
+            </article>
         </div>
-    </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Barbearia do Diguim. Todos os direitos reservados.</p>
         <p>Contato: (17) 99763-8155</p>
     </footer>
-
-    <script>
-        function verificarLogin() {
-            const usuarioLogado = localStorage.getItem('diguim_user_email');
-            const loginLink = document.getElementById('login-link');
-            const logoutBtn = document.getElementById('logout-btn');
-            const userBadge = document.getElementById('user-badge');
-
-            if (usuarioLogado) {
-                loginLink.style.display = 'none';
-                logoutBtn.style.display = 'inline-block';
-                userBadge.style.display = 'inline-block';
-                userBadge.textContent = usuarioLogado;
-            } else {
-                loginLink.style.display = 'inline-block';
-                logoutBtn.style.display = 'none';
-                userBadge.style.display = 'none';
-            }
-        }
-
-        document.getElementById('logout-btn').addEventListener('click', () => {
-            localStorage.removeItem('diguim_user_email');
-            verificarLogin();
-        });
-
-        window.addEventListener('storage', verificarLogin);
-        window.addEventListener('DOMContentLoaded', verificarLogin);
-    </script>
 </body>
 </html>

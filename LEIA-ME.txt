@@ -1,0 +1,30 @@
+BARBEARIA DO DIGUIM - PROJETO HTML + CSS
+
+1. Extraia a pasta barbearia_diguim.
+2. Abra essa pasta no Visual Studio Code (Arquivo > Abrir Pasta).
+3. Deixe os três arquivos de imagem na mesma pasta dos HTML, usando exatamente estes nomes:
+   - yuri alberto diguim.jpg
+   - robinho jr diguim.jpg
+   - robson bambu diguim.jpg
+4. Abra index.html no navegador para testar as páginas.
+
+ARQUIVOS
+- index.html: página inicial
+- login.html: tela visual de login
+- yuri-alberto.html: perfil e agendamento do Yuri Alberto
+- robinho-jr.html: perfil e agendamento do Robinho Jr
+- robson-bambu.html: perfil e agendamento do Robson Bambu
+- sucesso.html: tela após enviar o formulário
+- style.css: estilos de todas as páginas
+
+AGENDAMENTO
+- Atendimento informado: segunda a sábado, das 09:00 às 18:00.
+- O formulário permite escolher um serviço ou uma combinação pronta de dois serviços.
+- Os preços e as durações das combinações já aparecem somados no texto da opção.
+- Os horários aparecem a cada 30 minutos, de 09:00 até 15:30. Esse limite garante que até a combinação mais longa (2h30) termine até as 18:00.
+- A duração de Luzes e Nevou foi considerada como 30 minutos apenas como hipótese; confirme esse tempo com a barbearia.
+
+LIMITES DE HTML E CSS PUROS
+Sem JavaScript ou programação no servidor, o navegador não consegue bloquear domingos automaticamente, calcular o total a partir de duas caixas de seleção independentes, verificar se outro cliente já reservou o horário ou salvar o agendamento. Para continuar somente com HTML e CSS, as combinações foram cadastradas previamente como opções no menu.
+
+A página de login também é apenas visual: ela não valida contas nem protege áreas do site. A página de sucesso apenas mostra uma mensagem após o envio do formulário.

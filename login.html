@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Barbearia do Diguim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page-body">
+    <main class="login-container">
+        <section class="login-card">
+            <div class="login-header">
+                <h1>Barbearia do Diguim</h1>
+                <p>Entre com sua conta para continuar.</p>
+            </div>
+
+            <form action="index.html" method="get">
+                <div class="form-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-senha">Senha</label>
+                    <input type="password" id="login-senha" name="senha" placeholder="Mínimo de 7 caracteres" minlength="7" required>
+                </div>
+
+                <button type="submit" class="btn-primary btn-full">Entrar</button>
+            </form>
+
+            <p class="form-hint">Esta é apenas a tela visual de login. A conferência de usuário e senha precisa de um sistema no servidor.</p>
+            <div class="login-footer">
+                <a href="index.html" class="back-link">&larr; Voltar para o site</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

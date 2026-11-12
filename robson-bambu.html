@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robson Bambu - Barbearia do Diguim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html" class="logo-link">Barbearia do Diguim</a></h1>
+            <div class="header-actions">
+                <a href="login.html" class="btn-header">Fazer Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container profile-layout">
+        <aside class="profile-sidebar">
+            <a href="index.html" class="back-link-left">&larr; Voltar para Barbeiros</a>
+
+            <article class="card">
+                <img src="robson bambu diguim.jpg" alt="Foto de Robson Bambu">
+                <h2>Robson Bambu</h2>
+                <p>Especialista em Corte com Cabelo Enrolado</p>
+            </article>
+
+            <section class="servicos-box">
+                <h3>Preços, serviços e duração</h3>
+                <table>
+                    <thead>
+                        <tr><td>Serviço</td><td>Preço</td><td>Duração</td></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>Corte</td><td>R$ 35,00</td><td>30 min</td></tr>
+                    <tr><td>Barba</td><td>R$ 15,00</td><td>30 min</td></tr>
+                    <tr><td>Química</td><td>R$ 115,00</td><td>2 horas</td></tr>
+                    <tr><td>Luzes e Nevou</td><td>R$ 30,00</td><td>30 min*</td></tr>
+                    <tr><td>Hidratação</td><td>R$ 25,00</td><td>30 min</td></tr>
+                    </tbody>
+                </table>
+                <p class="form-hint">* A duração de Luzes e Nevou foi considerada como 30 minutos provisoriamente. Confirme esse tempo com a barbearia.</p>
+            </section>
+        </aside>
+
+        <section class="profile-content" id="agendamento">
+            <h2>Agendar com Robson Bambu</h2>
+            <p class="subtitle-agendamento">Escolha um serviço ou uma combinação de dois serviços. O preço e a duração já aparecem somados nas opções.</p>
+
+            <div class="horarios-info">
+                <strong>Horário de atendimento:</strong> segunda a sábado, das 09:00 às 18:00. A última opção de início é 15:30 para garantir que até a combinação mais longa termine antes das 18:00.
+            </div>
+
+            <form action="sucesso.html" method="get">
+                <input type="hidden" name="barbeiro" value="Robson Bambu">
+
+                <div class="form-group">
+                    <label for="email">E-mail do Cliente:</label>
+                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="form-group">
+                    <label for="pacote">Escolha o serviço (ou dois serviços):</label>
+                    <select id="pacote" name="servico" required>
+                        <option value="">Selecione uma opção...</option>
+                        <optgroup label="Um serviço">
+                        <option value="Corte — R$ 35,00 — 30 min">Corte — R$ 35,00 — 30 min</option>
+                        <option value="Barba — R$ 15,00 — 30 min">Barba — R$ 15,00 — 30 min</option>
+                        <option value="Química — R$ 115,00 — 2 horas">Química — R$ 115,00 — 2 horas</option>
+                        <option value="Luzes e Nevou — R$ 30,00 — 30 min*">Luzes e Nevou — R$ 30,00 — 30 min*</option>
+                        <option value="Hidratação — R$ 25,00 — 30 min">Hidratação — R$ 25,00 — 30 min</option>
+                        </optgroup>
+                        <optgroup label="Dois serviços — valores e tempos somados">
+                        <option value="Corte + Barba — R$ 50,00 — 1 hora">Corte + Barba — R$ 50,00 — 1 hora</option>
+                        <option value="Corte + Química — R$ 150,00 — 2 horas e 30 minutos">Corte + Química — R$ 150,00 — 2 horas e 30 minutos</option>
+                        <option value="Corte + Luzes e Nevou — R$ 65,00 — 1 hora">Corte + Luzes e Nevou — R$ 65,00 — 1 hora</option>
+                        <option value="Corte + Hidratação — R$ 60,00 — 1 hora">Corte + Hidratação — R$ 60,00 — 1 hora</option>
+                        <option value="Barba + Química — R$ 130,00 — 2 horas e 30 minutos">Barba + Química — R$ 130,00 — 2 horas e 30 minutos</option>
+                        <option value="Barba + Luzes e Nevou — R$ 45,00 — 1 hora">Barba + Luzes e Nevou — R$ 45,00 — 1 hora</option>
+                        <option value="Barba + Hidratação — R$ 40,00 — 1 hora">Barba + Hidratação — R$ 40,00 — 1 hora</option>
+                        <option value="Química + Luzes e Nevou — R$ 145,00 — 2 horas e 30 minutos">Química + Luzes e Nevou — R$ 145,00 — 2 horas e 30 minutos</option>
+                        <option value="Química + Hidratação — R$ 140,00 — 2 horas e 30 minutos">Química + Hidratação — R$ 140,00 — 2 horas e 30 minutos</option>
+                        <option value="Luzes e Nevou + Hidratação — R$ 55,00 — 1 hora">Luzes e Nevou + Hidratação — R$ 55,00 — 1 hora</option>
+                        </optgroup>
+                    </select>
+                    <span class="form-hint">Para fazer dois serviços no mesmo dia, escolha a combinação correspondente na segunda parte da lista.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="data">Data do agendamento:</label>
+                    <input type="date" id="data" name="data" required>
+                    <span class="form-hint">Atendimento de segunda a sábado. O HTML não consegue bloquear automaticamente os domingos.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="hora">Horário de início:</label>
+                    <select id="hora" name="hora" required>
+                        <option value="">Selecione o horário...</option>
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:30">12:30</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">15:30</option>
+                    </select>
+                    <span class="form-hint">Os horários são apresentados em intervalos de 30 minutos.</span>
+                </div>
+
+                <button type="submit" class="btn-primary btn-full">Solicitar Agendamento</button>
+            </form>
+            <p class="aviso-html">Atenção: esta versão é feita somente com HTML e CSS. Ela não verifica conflitos de horários nem salva o agendamento em um banco de dados.</p>
+        </section>
+    </main>
+</body>
+</html>
