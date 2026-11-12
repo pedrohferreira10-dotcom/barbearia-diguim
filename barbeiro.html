@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar - Barbearia do Diguim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html" style="color: inherit; text-decoration: none;">Barbearia do Diguim</a></h1>
+            <div class="header-actions">
+                <span id="user-badge" style="display: none;"></span>
+                <a href="login.html" id="login-link" class="btn-header">Fazer Login</a>
+                <button id="logout-btn" class="btn-header btn-outline" style="display: none;">Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container profile-layout">
+        <div class="profile-sidebar">
+            <a href="index.html" class="back-link" style="display: block; margin-bottom: 20px;">&larr; Voltar para Barbeiros</a>
+            
+            <div class="card" id="barbeiro-info">
+                <img id="barbeiro-img" src="" alt="Foto do Barbeiro">
+                <h2 id="barbeiro-nome">Carregando...</h2>
+                <p id="barbeiro-spec" style="margin-bottom: 15px;"></p>
+            </div>
+
+            <div class="servicos-box">
+                <h3>Preços e Serviços</h3>
+                <table>
+                    <tr><td>Corte</td><td>R$ 35,00</td></tr>
+                    <tr><td>Barba</td><td>R$ 15,00</td></tr>
+                    <tr><td>Química</td><td>R$ 115,00</td></tr>
+                    <tr><td>Luzes e Nevou</td><td>R$ 30,00</td></tr>
+                    <tr><td>Hidratação</td><td>R$ 25,00</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <section id="agendamento">
+                <h2>Agendar Horário com <span id="nome-agendamento"></span></h2>
+                
+                <div id="login-gate" class="login-box-aviso">
+                    <p>Para agendar um horário com este profissional, acesse sua conta primeiro.</p>
+                    <a href="#" id="link-login-redirect" class="btn-primary">Ir para Tela de Login</a>
+                </div>
+                
+                <form id="form-agendamento" style="display: none;">
+                    <div class="form-group">
+                        <label for="email">E-mail do Cliente:</label>
+                        <input type="email" id="email" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servico">Escolha o Serviço:</label>
+                        <select id="servico" required>
+                            <option value="">Selecione o serviço...</option>
+                            <option value="corte">Corte - R$ 35,00</option>
+                            <option value="barba">Barba - R$ 15,00</option>
+                            <option value="quimica">Química - R$ 115,00</option>
+                            <option value="luzes">Luzes e Nevou - R$ 30,00</option>
+                            <option value="hidratacao">Hidratação - R$ 25,00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data-hora">Data e Hora do Agendamento:</label>
+                        <input type="datetime-local" id="data-hora" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">Confirmar Agendamento</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const barbeirosData = {
+            'yuri': { nome: 'Yuri Alberto', spec: 'Especialista em Química', img: 'image_285e7e.jpg' }, //[cite: 1]
+            'robinho': { nome: 'Robinho Jr', spec: 'Especialista em Corte com Cabelo Liso', img: 'robinho jr diguim.jpg' }, //[cite: 2]
+            'robson': { nome: 'Robson Bambu', spec: 'Especialista em Corte com Cabelo Enrolado', img: 'image_285abf.jpg' } //[cite: 3]
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const idBarbeiro = urlParams.get('id');
+
+        if (!idBarbeiro || !barbeirosData[idBarbeiro]) {
+            window.location.href = 'index.html';
+        } else {
+            const b = barbeirosData[idBarbeiro];
+            document.getElementById('barbeiro-img').src = b.img;
+            document.getElementById('barbeiro-nome').textContent = b.nome;
+            document.getElementById('nome-agendamento').textContent = b.nome;
+            document.getElementById('barbeiro-spec').textContent = b.spec;
+        }
+
+        function verificarLogin() {
+            const usuarioLogado = localStorage.getItem('diguim_user_email');
+            const loginLink = document.getElementById('login-link');
+            const logoutBtn = document.getElementById('logout-btn');
+            const userBadge = document.getElementById('user-badge');
+            const loginGate = document.getElementById('login-gate');
+            const formAgendamento = document.getElementById('form-agendamento');
+            const emailInput = document.getElementById('email');
+            const linkLoginRedirect = document.getElementById('link-login-redirect');
+
+            // Passa a URL atual para o login saber pra onde voltar
+            const urlAtual = encodeURIComponent(window.location.href);
+            linkLoginRedirect.href = `login.html?redirect=${urlAtual}`;
+            loginLink.href = `login.html?redirect=${urlAtual}`;
+
+            if (usuarioLogado) {
+                loginLink.style.display = 'none';
+                logoutBtn.style.display = 'inline-block';
+                userBadge.style.display = 'inline-block';
+                userBadge.textContent = usuarioLogado;
+                
+                loginGate.style.display = 'none';
+                formAgendamento.style.display = 'flex';
+                emailInput.value = usuarioLogado;
+            } else {
+                loginLink.style.display = 'inline-block';
+                logoutBtn.style.display = 'none';
+                userBadge.style.display = 'none';
+                
+                loginGate.style.display = 'block';
+                formAgendamento.style.display = 'none';
+            }
+        }
+
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('diguim_user_email');
+            verificarLogin();
+        });
+
+        document.getElementById('form-agendamento').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const b = barbeirosData[idBarbeiro].nome;
+            const sv = document.getElementById('servico').options[document.getElementById('servico').selectedIndex].text;
+            alert(`Agendamento realizado com sucesso!\n\nBarbeiro: ${b}\nServiço: ${sv}\n\nAguarde a nossa confirmação no WhatsApp.`);
+            document.getElementById('form-agendamento').reset();
+            document.getElementById('email').value = localStorage.getItem('diguim_user_email');
+        });
+
+        window.addEventListener('DOMContentLoaded', verificarLogin);
+    </script>
+</body>
+</html>
